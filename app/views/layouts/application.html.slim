@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+
+    title Bookshelf
+
+  body
+    .container
+      nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle.collapsed type="button" data-target="#navbar" data-toggle="collapse" aria-controls="navbar" aria-expanded="false"
+              span.icon-bar
+              span.icon-bar
+            = link_to 'Bookshelf', :root, class: 'navbar-brand'
+
+      - if alert || notice
+        .alert.alert-dismissible class=(alert ? 'alert-danger' : 'alert-success') role="alert"
+          button.close type="button" data-dismiss="alert" aria-label="Close"
+            span aria-hidden="true" &times;
+          = alert || notice
+
+    .container == yield
