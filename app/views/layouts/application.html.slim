@@ -17,10 +17,14 @@ html
               span.icon-bar
             = link_to 'Bookshelf', :root, class: 'navbar-brand'
 
-      - if alert || notice
-        .alert.alert-dismissible class=(alert ? 'alert-danger' : 'alert-success') role="alert"
-          button.close type="button" data-dismiss="alert" aria-label="Close"
-            span aria-hidden="true" &times;
-          = alert || notice
+      - if alert
+        .alert.alert-dismissible.alert-danger role="alert"
+          button.close type="button" data-dismiss="alert" aria-label="Close": span aria-hidden="true" &times;
+          = alert
+
+      - if notice
+        .alert.alert-dismissible.alert-success role="alert"
+          button.close type="button" data-dismiss="alert" aria-label="Close": span aria-hidden="true" &times;
+          = notice
 
     .container == yield
