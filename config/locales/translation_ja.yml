@@ -1,9 +1,12 @@
 ja:
   activerecord:
     models:
+      author: 著者
       user: ユーザー
 
     attributes:
+      author:
+        name: 名前
       user:
         email: メールアドレス
         password: パスワード

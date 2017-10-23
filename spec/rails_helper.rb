@@ -64,5 +64,7 @@ RSpec.configure do |config|
     DatabaseRewinder.clean
   end
 
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
   config.include FactoryGirl::Syntax::Methods
 end

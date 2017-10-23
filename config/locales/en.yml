@@ -30,4 +30,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  sign_in: Sign in
+  sign_out: Sign out
+  index: Index
+  new: New
+  create: Create
+  edit: Edit
+  update: Update
+  delete: Delete
+
+  messages:
+    confirmation: Are you sure?
+    successfully_created: '%{name} was successfully created.'
+    successfully_updated: '%{name} was successfully updated.'
+    successfully_destroyed: '%{name} was successfully destroyed.'
+
   hello: "Hello world"

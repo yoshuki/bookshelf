@@ -1,0 +1,10 @@
+.page-header
+  - if new
+    .pull-right
+      = link_to url_for(action: :new), class: 'btn btn-success'
+        span.glyphicon.glyphicon-plus
+        =< t('new')
+  h1
+    = link_to title, url_for(action: :index)
+    - if sub_title.present?
+      small<> = sub_title

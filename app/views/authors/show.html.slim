@@ -1,0 +1,12 @@
+== render 'shared/header', title: Author.model_name.human, sub_title: nil, new: true
+
+.form-horizontal
+  .form-group
+    label.col-sm-3.control-label = Author.human_attribute_name :name
+    .col-sm-9.form-control-static = @author.name
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = link_to t('index'), url_for(action: :index), class: 'btn btn-default'
+      =< link_to t('edit'), edit_author_path(@author), class: 'btn btn-default'
+      =< link_to t('delete'), author_path(@author), class: 'btn btn-danger',
+        method: :delete, data: {confirm: t('messages.confirmation')}

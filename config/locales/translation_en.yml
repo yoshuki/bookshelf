@@ -1,9 +1,12 @@
 en:
   activerecord:
     models:
+      author: Author
       user: User
 
     attributes:
+      author:
+        name: Name
       user:
         email: Email
         password: Password

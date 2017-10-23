@@ -1,5 +1,20 @@
 ---
 ja:
+  sign_in: サインイン
+  sign_out: サインアウト
+  index: 一覧
+  new: 新規作成
+  create: 作成
+  edit: 編集
+  update: 更新
+  delete: 削除
+
+  messages:
+    confirmation: よろしいですか？
+    successfully_created: '%{name} を作成しました。'
+    successfully_updated: '%{name} を更新しました。'
+    successfully_destroyed: '%{name} を削除しました。'
+
   activerecord:
     errors:
       messages:

@@ -16,6 +16,20 @@ html
               span.icon-bar
               span.icon-bar
             = link_to 'Bookshelf', :root, class: 'navbar-brand'
+          #navbar.navbar-collapse.collapse
+            - if user_signed_in?
+              ul.nav.navbar-nav
+                li class=(controller_name == 'authors' ? 'active' : '') = link_to Author.model_name.human, :authors
+            ul.nav.navbar-nav.navbar-right
+              - if user_signed_in?
+                li.dropdown
+                  a.dropdown-toggle href="javascript:void(0);" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true"
+                    = current_user.name
+                    span.caret<
+                  ul.dropdown-menu
+                    li = link_to t('sign_out'), :destroy_user_session, method: :delete
+              - else
+                li = link_to t('sign_in'), :new_user_session
 
       - if alert
         .alert.alert-dismissible.alert-danger role="alert"
