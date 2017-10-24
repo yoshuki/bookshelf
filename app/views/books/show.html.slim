@@ -1,0 +1,15 @@
+== render 'shared/header', title: Book.model_name.human, sub_title: nil, new: true
+
+.form-horizontal
+  .form-group
+    label.col-sm-3.control-label = Book.human_attribute_name :title
+    .col-sm-9.form-control-static = @book.title
+  .form-group
+    label.col-sm-3.control-label = Book.human_attribute_name :author
+    .col-sm-9.form-control-static = @book.author.name
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = link_to t('index'), url_for(action: :index), class: 'btn btn-default'
+      =< link_to t('edit'), edit_book_path(@book), class: 'btn btn-default'
+      =< link_to t('delete'), book_path(@book), class: 'btn btn-danger',
+        method: :delete, data: {confirm: t('messages.confirmation')}

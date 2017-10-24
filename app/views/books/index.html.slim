@@ -1,0 +1,26 @@
+== render 'shared/header', title: Book.model_name.human, sub_title: nil, new: true
+
+table.table.table-striped
+  thead
+    tr
+      th = Book.human_attribute_name(:title)
+      th = Book.human_attribute_name(:author)
+      th
+
+  tbody
+    - @books.each do |book|
+      tr
+        td = link_to book.title, book_path(book)
+        td = book.author.name
+        td.text-center.actions
+          = link_to edit_book_path(book), class: 'btn btn-default',
+            title: t('edit'), data: {toggle: 'tooltip', placement: 'left'}
+            span.glyphicon.glyphicon-edit
+          =< link_to book_path(book), class: 'btn btn-danger',
+            method: :delete, title: t('delete'),
+            data: {toggle: 'tooltip', placement: 'right', confirm: t('messages.confirmation')}
+            span.glyphicon.glyphicon-trash
+
+= paginate @books
+
+== render 'shared/footer'

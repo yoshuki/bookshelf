@@ -1,0 +1,17 @@
+= form_with(model: book, local: true, class: 'form-horizontal') do |f|
+  .form-group
+    = f.label :title, class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.text_field :title, class: 'form-control'
+      - f.object.errors.full_messages_for(:title).each do |message|
+        span.text-danger = message
+  .form-group
+    = f.label :author, class: 'col-sm-3 control-label'
+    .col-sm-4
+      = f.select :author_id, @author_options, {include_blank: true}, class: 'form-control'
+      - f.object.errors.full_messages_for(:author).each do |message|
+        span.text-danger = message
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = link_to t('index'), url_for(action: :index), class: 'btn btn-default'
+      =< f.submit submit_value, class: 'btn btn-primary'

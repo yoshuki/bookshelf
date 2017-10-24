@@ -2,11 +2,15 @@ en:
   activerecord:
     models:
       author: Author
+      book: Book
       user: User
 
     attributes:
       author:
         name: Name
+      book:
+        title: Title
+        author: Author
       user:
         email: Email
         password: Password

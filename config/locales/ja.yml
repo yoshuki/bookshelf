@@ -11,6 +11,7 @@ ja:
 
   messages:
     confirmation: よろしいですか？
+    no_author_exist: '著者を登録してください。'
     successfully_created: '%{name} を作成しました。'
     successfully_updated: '%{name} を更新しました。'
     successfully_destroyed: '%{name} を削除しました。'

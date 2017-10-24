@@ -19,6 +19,7 @@ html
           #navbar.navbar-collapse.collapse
             - if user_signed_in?
               ul.nav.navbar-nav
+                li class=(controller_name == 'books' ? 'active' : '') = link_to Book.model_name.human, :books
                 li class=(controller_name == 'authors' ? 'active' : '') = link_to Author.model_name.human, :authors
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
