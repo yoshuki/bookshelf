@@ -13,7 +13,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
     if @author.save
-      redirect_to :authors , notice: t('messages.successfully_created', name: @author.name)
+      redirect_to :authors, notice: t('messages.successfully_created', name: @author.name)
     else
       render :new
     end
@@ -27,15 +27,19 @@ class AuthorsController < ApplicationController
 
   def update
     if @author.update(author_params)
-      redirect_to :authors , notice: t('messages.successfully_updated', name: @author.name)
+      redirect_to :authors, notice: t('messages.successfully_updated', name: @author.name)
     else
       render :edit
     end
   end
 
   def destroy
-    @author.destroy
-    redirect_to :authors , notice: t('messages.successfully_destroyed', name: @author.name)
+    options = if @author.destroy
+                {notice: t('messages.successfully_destroyed', name: @author.name)}
+              else
+                {alert: @author.errors.full_messages.join(' ')}
+              end
+    redirect_to :authors, options
   end
 
   private

@@ -6,7 +6,7 @@
     .col-sm-9.form-control-static = @book.title
   .form-group
     label.col-sm-3.control-label = Book.human_attribute_name :author
-    .col-sm-9.form-control-static = @book.author.name
+    .col-sm-9.form-control-static = link_to @book.author.name, author_path(@book.author)
   .form-group
     .col-sm-offset-3.col-sm-9
       = link_to t('index'), url_for(action: :index), class: 'btn btn-default'

@@ -8,6 +8,7 @@ en:
     attributes:
       author:
         name: Name
+        books: Production
       book:
         title: Title
         author: Author

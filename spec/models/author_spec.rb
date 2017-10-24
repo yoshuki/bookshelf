@@ -23,4 +23,15 @@ RSpec.describe Author, type: :model do
     author.validate
     expect(author.errors[:name].size).to eq 1
   end
+
+  describe '#books' do
+    let(:author) { create(:author) }
+
+    it 'returns books the author written' do
+      create_list(:book, 3, author: author)
+      create_list(:book, 4, author: create(:author))
+
+      expect(author.books.size).to eq 3
+    end
+  end
 end

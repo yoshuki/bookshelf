@@ -8,6 +8,7 @@ ja:
     attributes:
       author:
         name: 名前
+        books: 著作
       book:
         title: タイトル
         author: 著者
