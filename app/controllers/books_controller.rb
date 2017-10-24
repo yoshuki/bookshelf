@@ -15,7 +15,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to :books , notice: t('messages.successfully_created', name: @book.title)
+      redirect_to :books, notice: t('messages.successfully_created', name: @book.title)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      redirect_to :books , notice: t('messages.successfully_updated', name: @book.title)
+      redirect_to :books, notice: t('messages.successfully_updated', name: @book.title)
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to :books , notice: t('messages.successfully_destroyed', name: @book.title)
+    redirect_to :books, notice: t('messages.successfully_destroyed', name: @book.title)
   end
 
   private
@@ -55,6 +55,6 @@ class BooksController < ApplicationController
   end
 
   def check_author_existence
-    redirect_to :authors , alert: t('messages.no_author_exist') if Author.count.zero?
+    redirect_to :authors, alert: t('messages.no_author_exist') if Author.count.zero?
   end
 end
