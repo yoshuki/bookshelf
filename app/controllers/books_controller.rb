@@ -47,11 +47,12 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author_id)
+    params.require(:book).permit(:title, :author_id, category_ids: [])
   end
 
   def set_options
     @author_options = Author.pluck(:name, :id)
+    @categories = Category.all
   end
 
   def check_author_existence

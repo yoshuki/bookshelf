@@ -8,6 +8,13 @@
     label.col-sm-3.control-label = Book.human_attribute_name :author
     .col-sm-9.form-control-static = link_to @book.author.name, author_path(@book.author)
   .form-group
+    label.col-sm-3.control-label = Book.human_attribute_name :categories
+    .col-sm-9.form-control-static
+      - if @book.categories.present?
+        ul
+          - @book.categories.each do |category|
+            li = link_to category.name, category_path(category)
+  .form-group
     .col-sm-offset-3.col-sm-9
       = link_to t('index'), url_for(action: :index), class: 'btn btn-default'
       =< link_to t('edit'), edit_book_path(@book), class: 'btn btn-default'

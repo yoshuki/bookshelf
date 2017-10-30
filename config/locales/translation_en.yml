@@ -13,8 +13,10 @@ en:
       book:
         title: Title
         author: Author
+        categories: Categories
       category:
         name: Name
+        books: Books
       user:
         email: Email
         password: Password

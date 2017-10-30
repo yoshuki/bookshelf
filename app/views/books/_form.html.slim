@@ -12,6 +12,13 @@
       - f.object.errors.full_messages_for(:author).each do |message|
         span.text-danger = message
   .form-group
+    = f.label :categories, class: 'col-sm-3 control-label'
+    .col-sm-9
+      = f.collection_check_boxes :category_ids, @categories, :id, :name do |b|
+        label.checkbox-inline
+          = b.check_box
+          = b.text
+  .form-group
     .col-sm-offset-3.col-sm-9
       = link_to t('index'), url_for(action: :index), class: 'btn btn-default'
       =< f.submit submit_value, class: 'btn btn-primary'

@@ -13,8 +13,10 @@ ja:
       book:
         title: タイトル
         author: 著者
+        categories: カテゴリー
       category:
         name: カテゴリー名
+        books: 本
       user:
         email: メールアドレス
         password: パスワード
