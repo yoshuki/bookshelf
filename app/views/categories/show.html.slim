@@ -1,0 +1,12 @@
+== render 'shared/header', title: Category.model_name.human, sub_title: nil, new: true
+
+.form-horizontal
+  .form-group
+    label.col-sm-3.control-label = Category.human_attribute_name :name
+    .col-sm-9.form-control-static = @category.name
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = link_to t('index'), url_for(action: :index), class: 'btn btn-default'
+      =< link_to t('edit'), edit_category_path(@category), class: 'btn btn-default'
+      =< link_to t('delete'), category_path(@category), class: 'btn btn-danger',
+        method: :delete, data: {confirm: t('messages.confirmation')}

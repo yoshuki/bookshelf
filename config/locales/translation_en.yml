@@ -3,6 +3,7 @@ en:
     models:
       author: Author
       book: Book
+      category: Category
       user: User
 
     attributes:
@@ -12,6 +13,8 @@ en:
       book:
         title: Title
         author: Author
+      category:
+        name: Name
       user:
         email: Email
         password: Password

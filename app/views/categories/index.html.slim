@@ -1,0 +1,24 @@
+== render 'shared/header', title: Category.model_name.human, sub_title: nil, new: true
+
+table.table.table-striped
+  thead
+    tr
+      th = Category.human_attribute_name(:name)
+      th
+
+  tbody
+    - @categories.each do |category|
+      tr
+        td = link_to category.name, category_path(category)
+        td.text-center.actions
+          = link_to edit_category_path(category), class: 'btn btn-default',
+            title: t('edit'), data: {toggle: 'tooltip', placement: 'left'}
+            span.glyphicon.glyphicon-edit
+          =< link_to category_path(category), class: 'btn btn-danger',
+            method: :delete, title: t('delete'),
+            data: {toggle: 'tooltip', placement: 'right', confirm: t('messages.confirmation')}
+            span.glyphicon.glyphicon-trash
+
+= paginate @categories
+
+== render 'shared/footer'

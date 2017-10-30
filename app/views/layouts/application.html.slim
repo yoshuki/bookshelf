@@ -21,6 +21,7 @@ html
               ul.nav.navbar-nav
                 li class=(controller_name == 'books' ? 'active' : '') = link_to Book.model_name.human, :books
                 li class=(controller_name == 'authors' ? 'active' : '') = link_to Author.model_name.human, :authors
+                li class=(controller_name == 'categories' ? 'active' : '') = link_to Category.model_name.human, :categories
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
                 li.dropdown

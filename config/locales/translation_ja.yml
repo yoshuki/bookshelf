@@ -3,6 +3,7 @@ ja:
     models:
       author: 著者
       book: 本
+      category: カテゴリー
       user: ユーザー
 
     attributes:
@@ -12,6 +13,8 @@ ja:
       book:
         title: タイトル
         author: 著者
+      category:
+        name: カテゴリー名
       user:
         email: メールアドレス
         password: パスワード
