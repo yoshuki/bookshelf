@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :categorization do
     association :book
     association :category

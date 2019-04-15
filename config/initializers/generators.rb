@@ -1,5 +1,5 @@
 Rails.application.config.generators do |g|
-  g.fixture_replacement :factory_girl
+  g.fixture_replacement :factory_bot
   g.test_framework :rspec,
     controller_specs: true,   # lib/generators/rspec/controller/controller_generator.rb
     view_specs: false,        # lib/generators/rspec/controller/controller_generator.rb
