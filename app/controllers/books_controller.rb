@@ -29,6 +29,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
+      @book.cover_image.purge if params[:delete_cover_image]
       redirect_to :books, notice: t('messages.successfully_updated', name: @book.title)
     else
       render :edit
@@ -47,7 +48,7 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author_id, category_ids: [])
+    params.require(:book).permit(:title, :author_id, :cover_image, category_ids: [])
   end
 
   def set_options

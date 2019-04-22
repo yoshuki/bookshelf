@@ -19,6 +19,19 @@
           = b.check_box
           = b.text
   .form-group
+    = f.label :cover_image, class: 'col-sm-3 control-label'
+    .col-sm-6
+      - if book.cover_image.attached?
+        .thumbnail
+          = image_tag book.cover_image.variant(resize: '320x320'), class: 'img-thumbnail img-responsive'
+          .caption
+            .checkbox: label
+              = check_box_tag :delete_cover_image
+              = t('delete')
+      = f.file_field :cover_image, class: 'form-control'
+      - f.object.errors.full_messages_for(:cover_image).each do |message|
+        span.text-danger = message
+  .form-group
     .col-sm-offset-3.col-sm-9
       = link_to t('index'), url_for(action: :index), class: 'btn btn-default'
       =< f.submit submit_value, class: 'btn btn-primary'

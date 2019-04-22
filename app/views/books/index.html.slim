@@ -5,6 +5,7 @@ table.table.table-striped
     tr
       th = Book.human_attribute_name(:title)
       th = Book.human_attribute_name(:author)
+      th = Book.human_attribute_name(:cover_image)
       th
 
   tbody
@@ -12,6 +13,9 @@ table.table.table-striped
       tr
         td = link_to book.title, book_path(book)
         td = book.author.name
+        td
+          - if book.cover_image.attached?
+            .thumbnail = image_tag book.cover_image.variant(resize: '160x160'), class: 'img-thumbnail img-responsive'
         td.text-center.actions
           = link_to edit_book_path(book), class: 'btn btn-default',
             title: t('edit'), data: {toggle: 'tooltip', placement: 'left'}

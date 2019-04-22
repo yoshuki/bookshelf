@@ -14,6 +14,7 @@ ja:
         title: タイトル
         author: 著者
         categories: カテゴリー
+        cover_image: 表紙画像
       category:
         name: カテゴリー名
         books: 本

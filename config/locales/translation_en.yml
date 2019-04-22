@@ -14,6 +14,7 @@ en:
         title: Title
         author: Author
         categories: Categories
+        cover_image: Cover image
       category:
         name: Name
         books: Books
